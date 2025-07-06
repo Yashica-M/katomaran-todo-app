@@ -30,16 +30,18 @@
 🛠️ Setup Instructions
 
 1. Clone the repository
-
+```
 git clone https://github.com/Yashica-M/katomaran-todo-app.git
 cd katomaran-todo-app
-
+```
 2. Backend Setup (/server)
+```
 cd server
 npm install
+```
 
 Create a .env file in /server with:
-
+```
 .env
 PORT=5000
 MONGO_URI=your_mongodb_atlas_uri
@@ -47,21 +49,27 @@ JWT_SECRET=your_secret_key
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 CLIENT_URL=http://localhost:3000
-
+```
 Start the server:
+```
 npm start
+```
 
 3. Frontend Setup (/client)
-
+```
 cd ../client
 npm install
+```
 
 Create a .env file in /client with:
-
+```
 REACT_APP_API_URL=http://localhost:5000
+```
 
 Start the frontend:
+```
 npm start
+```
 
 🔐 How OAuth 2.0 Works
 Users authenticate with their Google account via OAuth.
