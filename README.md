@@ -103,7 +103,7 @@ Only basic priority/status fields are supported (e.g., Low/Medium/High, In Progr
 
 
 🏗️ Architecture Diagram
-
+```
                                      +----------------+
                                      |                |
                                      | MongoDB Atlas  |
@@ -112,29 +112,23 @@ Only basic priority/status fields are supported (e.g., Low/Medium/High, In Progr
                                               |
                                               |
 +-------------+                      +--------v-------+                  +----------------+
-|             |     HTTP/Socket      |                |    OAuth 2.0     |                |
+|             |        HTTP          |                |    OAuth 2.0     |                |
 |  React      |<------------------->|  Node.js       |<---------------->|  Google Auth   |
 |  Frontend   |                     |  Backend       |                  |  Service       |
 |             |                     |                |                  |                |
 +-------------+                     +----------------+                  +----------------+
-      ^                                     ^
-      |                                     |
-      |          +----------------+         |
-      |          |                |         |
-      +--------->| Socket.IO      |---------+
-                 | (Real-time)    |
-                 |                |
-                 +----------------+
 
 Client (Vercel)                   Server (Render/Railway)
 +-----------------------+         +-------------------------+
 | - React Components    |         | - Express API           |
 | - Context Providers   |         | - Mongoose Models       |
 | - React Router        |         | - JWT Authentication    |
-| - CSS Styling         |         | - Socket.IO Server      |
-| - Toast Notifications |         | - Rate Limiting         |
-| - Error Handling      |         | - Input Validation      |
+| - Simple CSS Styling  |         | - Input Validation      |
+| - Toast Notifications |         |                         |
+| - Basic Error Handling|         |                         |
 +-----------------------+         +-------------------------+
+```
+
 
 
 This project is a part of a hackathon run by https://www.katomaran.com
