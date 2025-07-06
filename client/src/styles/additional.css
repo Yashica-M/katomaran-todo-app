@@ -1,0 +1,369 @@
+/* App Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo h2 {
+  margin: 0;
+  color: #4a90e2;
+}
+
+.header-title {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.nav-link {
+  margin: 0 15px;
+  color: #555;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Todo Container - This is now the minimal styling needed */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual todo items will be stacked vertically in the simplified UI */
+
+/* Login Page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.login-card {
+  width: 400px;
+  max-width: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  text-align: center;
+}
+
+.login-card h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.login-card p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.google-login {
+  background-color: #fff;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.google-login:hover {
+  background-color: #f1f1f1;
+}
+
+.login-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Share Modal */
+.share-modal .shared-with-list {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.share-modal .shared-with-list h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.share-modal .shared-with-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.share-modal .shared-with-list li {
+  padding: 5px 0;
+  color: #555;
+}
+
+/* Enhanced Todo Item */
+.todo-item {
+  position: relative;
+}
+
+.todo-item.overdue {
+  border-left-color: #e74c3c;
+  background-color: #fff8f8;
+}
+
+.todo-status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.todo-item.pending .todo-status-badge {
+  background-color: #f1c40f;
+  color: #444;
+}
+
+.todo-item.in_progress .todo-status-badge {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.todo-item.completed .todo-status-badge {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.shared-indicator {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #3498db;
+}
+
+/* Form Row */
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Loading and Error States */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error-message {
+  background-color: #fff0f0;
+  color: #e74c3c;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.empty-list {
+  text-align: center;
+  padding: 40px 0;
+  color: #777;
+}
+
+/* Add Task Page Specific Styles */
+.add-task-page .todo-header {
+  margin-bottom: 30px;
+}
+
+.welcome-message {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+.user-highlight {
+  color: #4a90e2;
+  font-weight: 600;
+}
+
+.form-panel {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.form-panel h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.form-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-footer .btn {
+  margin-left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .todo-actions {
+    flex-wrap: wrap;
+  }
+  
+  .app-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .user-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .header-nav {
+    display: none; /* Hide nav links on mobile */
+  }
+  
+  /* Add a mobile menu button */
+  .mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #4a90e2;
+  }
+}
+
+/* Offline Support */
+.offline-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Toast Customizations */
+.Toastify__toast {
+  border-radius: 8px !important;
+}
+
+/* Add Task Form when it's on the dedicated page */
+.add-task-page .todo-form {
+  margin-bottom: 0;
+}

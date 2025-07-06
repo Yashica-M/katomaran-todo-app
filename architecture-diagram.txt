@@ -1,0 +1,25 @@
+```
+                                     +----------------+
+                                     |                |
+                                     | MongoDB Atlas  |
+                                     |                |
+                                     +--------^-------+
+                                              |
+                                              |
++-------------+                      +--------v-------+                  +----------------+
+|             |        HTTP          |                |    OAuth 2.0     |                |
+|  React      |<------------------->|  Node.js       |<---------------->|  Google Auth   |
+|  Frontend   |                     |  Backend       |                  |  Service       |
+|             |                     |                |                  |                |
++-------------+                     +----------------+                  +----------------+
+
+Client (Vercel)                   Server (Render/Railway)
++-----------------------+         +-------------------------+
+| - React Components    |         | - Express API           |
+| - Context Providers   |         | - Mongoose Models       |
+| - React Router        |         | - JWT Authentication    |
+| - Simple CSS Styling  |         | - Input Validation      |
+| - Toast Notifications |         |                         |
+| - Basic Error Handling|         |                         |
++-----------------------+         +-------------------------+
+```
