@@ -102,6 +102,7 @@ Minimal offline support — currently limited to viewing cached UI
 Only basic priority/status fields are supported (e.g., Low/Medium/High, In Progress/Done)
 
 🌐 Live Links
+
 🔗 Frontend: https://katomaran-todo-app-cyy5.vercel.app/login
 
 🔗 Backend: https://your-backend.onrender.com
