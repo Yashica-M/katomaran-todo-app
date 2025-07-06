@@ -105,7 +105,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(clientBuildPath));
 
   // Handle frontend routing, return all requests to the app
-  app.get('*', function(req, res) {
+  app.get('*', function(req, res, next) {
     // Skip API routes
     if (req.path.startsWith('/api/')) {
       return next();
