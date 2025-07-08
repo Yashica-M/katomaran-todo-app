@@ -4,7 +4,8 @@ import { useAuth } from '../contexts/AuthContext';
 const Login = () => {
   const { isLoading } = useAuth();
   
- const handleGoogleLogin = () => {
+const handleGoogleLogin = () => {
+  console.log('API URL:', process.env.REACT_APP_API_URL); // For debugging
   window.location.href = `${process.env.REACT_APP_API_URL}/auth/google`;
 };
   
