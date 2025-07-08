@@ -6,7 +6,8 @@ import './App.css';
 import './styles/additional.css';
 
 import Dashboard from './components/Dashboard';
-import Login from './components/Login';
+// Using the new Login component that has hardcoded URLs
+import Login from './components/LoginNew';
 import AuthSuccess from './components/AuthSuccess';
 import ProtectedRoute from './components/ProtectedRoute';
 import AddTaskPage from './components/AddTaskPage';
