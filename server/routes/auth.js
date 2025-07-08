@@ -17,14 +17,22 @@ router.get('/google/callback',
       // Generate JWT token
       const token = generateToken(req.user);
       
-      // Log successful authentication
-      console.log(`User authenticated: ${req.user.name}`);
+      // Enhanced logging
+      console.log(`User authenticated successfully: ${req.user.name}`);
+      console.log(`Redirecting to: ${process.env.CLIENT_URL}/auth/success?token=${token}`);
+      
+      // Check if CLIENT_URL is defined
+      if (!process.env.CLIENT_URL) {
+        console.error('CLIENT_URL environment variable is not defined!');
+        return res.status(500).send('Server misconfiguration: CLIENT_URL not defined');
+      }
       
       // Redirect to frontend with token
       res.redirect(`${process.env.CLIENT_URL}/auth/success?token=${token}`);
     } catch (error) {
       console.error('Error in Google callback:', error);
-      res.redirect(`${process.env.CLIENT_URL}/login?error=AuthFailure`);
+      console.error('Error details:', error.message);
+      res.redirect(`${process.env.CLIENT_URL || 'https://katomaran-todo-app-cyy5.vercel.app'}/login?error=AuthFailure&message=${encodeURIComponent(error.message)}`);
     }
   }
 );
