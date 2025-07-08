@@ -4,9 +4,9 @@ import { useAuth } from '../contexts/AuthContext';
 const Login = () => {
   const { isLoading } = useAuth();
   
-  const handleGoogleLogin = () => {
-    window.location.href = `${process.env.REACT_APP_API_URL}/auth/google`;
-  };
+ const handleGoogleLogin = () => {
+  window.location.href = `${process.env.REACT_APP_API_URL}/auth/google`;
+};
   
   if (isLoading) {
     return <div className="loading">Loading...</div>;
