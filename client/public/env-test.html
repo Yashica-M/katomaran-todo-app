@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment Variable Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .value {
+            font-family: monospace;
+            background-color: #e9e9e9;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .error {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        .success {
+            color: #388e3c;
+            font-weight: bold;
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #3a7bc8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Environment Variable Test</h1>
+    <p>This page checks if your environment variables are loaded correctly in your React production build.</p>
+    
+    <div class="container">
+        <h2>Environment Variables</h2>
+        <div id="envVars"></div>
+        
+        <h2>Manual Test</h2>
+        <p>Click the button below to test Google authentication with a hardcoded URL:</p>
+        <button id="testAuth">Test Google Auth</button>
+    </div>
+    
+    <script>
+        // Function to display environment variables
+        function displayEnvVars() {
+            const envVars = document.getElementById('envVars');
+            
+            // Add NODE_ENV
+            const nodeEnv = window.ENV_NODE_ENV || 'Not available';
+            envVars.innerHTML += `<p><strong>NODE_ENV:</strong> <span class="value">${nodeEnv}</span></p>`;
+            
+            // Check REACT_APP_API_URL
+            const apiUrl = window.ENV_REACT_APP_API_URL || 'Not available';
+            const apiUrlStatus = apiUrl.includes('localhost') ? 
+                '<span class="error">ERROR: Contains localhost</span>' : 
+                apiUrl !== 'Not available' ? '<span class="success">OK</span>' : 
+                '<span class="error">Missing</span>';
+                
+            envVars.innerHTML += `<p><strong>REACT_APP_API_URL:</strong> <span class="value">${apiUrl}</span> ${apiUrlStatus}</p>`;
+            
+            // Check REACT_APP_CLIENT_URL
+            const clientUrl = window.ENV_REACT_APP_CLIENT_URL || 'Not available';
+            const clientUrlStatus = clientUrl.includes('localhost') ? 
+                '<span class="error">ERROR: Contains localhost</span>' : 
+                clientUrl !== 'Not available' ? '<span class="success">OK</span>' : 
+                '<span class="error">Missing</span>';
+                
+            envVars.innerHTML += `<p><strong>REACT_APP_CLIENT_URL:</strong> <span class="value">${clientUrl}</span> ${clientUrlStatus}</p>`;
+            
+            // Hardcoded production URL (what we're now using)
+            const hardcodedUrl = "https://katomaran-todo-app-tdqg.onrender.com/api";
+            envVars.innerHTML += `<p><strong>Hardcoded Production URL:</strong> <span class="value">${hardcodedUrl}</span> <span class="success">Using this now</span></p>`;
+            
+            // Add current origin
+            envVars.innerHTML += `<p><strong>Current Origin:</strong> <span class="value">${window.location.origin}</span></p>`;
+        }
+        
+        // Test Google Auth with hardcoded URL
+        document.getElementById('testAuth').addEventListener('click', function() {
+            const productionApiUrl = "https://katomaran-todo-app-tdqg.onrender.com/api";
+            window.location.href = `${productionApiUrl}/auth/google`;
+        });
+        
+        // Capture environment variables from window if they exist (will be added during build)
+        window.ENV_NODE_ENV = process.env.NODE_ENV;
+        window.ENV_REACT_APP_API_URL = process.env.REACT_APP_API_URL;
+        window.ENV_REACT_APP_CLIENT_URL = process.env.REACT_APP_CLIENT_URL;
+        
+        // Display environment variables
+        displayEnvVars();
+    </script>
+</body>
+</html>
