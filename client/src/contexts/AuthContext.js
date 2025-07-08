@@ -28,8 +28,15 @@ export const AuthProvider = ({ children }) => {
         return;
       }
       
+      // FIXED: Always use production API URL in production environment
+      const apiBaseUrl = process.env.NODE_ENV === 'production' ? 
+        'https://katomaran-todo-app-tdqg.onrender.com/api' : 
+        process.env.REACT_APP_API_URL;
+        
+      console.log('AuthContext using API URL:', apiBaseUrl);
+      
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/me`);
+        const res = await axios.get(`${apiBaseUrl}/auth/me`);
         setCurrentUser(res.data);
         setIsAuthenticated(true);
       } catch (err) {

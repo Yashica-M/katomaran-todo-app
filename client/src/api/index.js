@@ -1,6 +1,13 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+// FIXED: Always use the production URL instead of falling back to localhost
+// This ensures API calls always go to production in deployed environments
+const PRODUCTION_API_URL = 'https://katomaran-todo-app-tdqg.onrender.com/api';
+const API_URL = process.env.NODE_ENV === 'development' ? 
+  (process.env.REACT_APP_API_URL || 'http://localhost:5000/api') : 
+  PRODUCTION_API_URL;
+
+console.log('API Service using URL:', API_URL);
 
 const api = axios.create({
   baseURL: API_URL

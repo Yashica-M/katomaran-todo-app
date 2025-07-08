@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Google Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .btn {
+            background-color: #4285F4;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Direct Google Authentication Test</h1>
+        <p>This page will directly redirect you to the production Google authentication endpoint.</p>
+        <p>Current time: <span id="time"></span></p>
+        
+        <button class="btn" id="directLogin">Direct Login with Google</button>
+        <p><small>URL: https://katomaran-todo-app-tdqg.onrender.com/api/auth/google</small></p>
+        
+        <div style="margin-top: 40px;">
+            <h3>If you're seeing this in production:</h3>
+            <p>The environment variables in your Vercel deployment might not be loading correctly.</p>
+            <p>Use this direct link as a workaround until the environment variable issue is fixed.</p>
+        </div>
+    </div>
+
+    <script>
+        // Display current time
+        document.getElementById('time').textContent = new Date().toLocaleString();
+        
+        // Handle direct login
+        document.getElementById('directLogin').addEventListener('click', function() {
+            window.location.href = 'https://katomaran-todo-app-tdqg.onrender.com/api/auth/google';
+        });
+    </script>
+</body>
+</html>
