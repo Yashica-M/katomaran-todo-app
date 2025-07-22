@@ -103,9 +103,9 @@ Only basic priority/status fields are supported (e.g., Low/Medium/High, In Progr
 
 🌐 Live Links
 
-🔗 Frontend: https://katomaran-todo-app-cyy5.vercel.app/login
+🔗 Frontend: [https://katomaran-todo-app-cyy5.vercel.app/login](https://todoapp-sage-ten.vercel.app/)
 
-🔗 Backend: https://your-backend.onrender.com
+🔗 Backend: https://todoapp-rmqk.onrender.com
 
 🎥 Loom Video Demo
 
